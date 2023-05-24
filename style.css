@@ -1,0 +1,338 @@
+:root {
+    --main-color: #17253a;
+    --bg-color: #F8F6F6;
+    --box-over-size: 800px;
+}
+p {
+    font-size: 13px;
+}
+@media (min-width: 576px) {
+    p {
+        font-size: 15px;
+    }
+}
+section {
+    overflow: hidden;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.9 !important;
+    counter-reset: mohamad-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+
+    background:  var(--main-color);
+}
+.title {
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    font-weight: 400;
+}
+.title::before {
+    content: "";
+    background: red;
+    width: 50px;
+    height: 3px;
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+.cta {
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    margin: 10px;
+    border-bottom: 9px;
+}
+/* Start home Section  */
+.home {
+    background: var(--main-color);
+    text-align: center;
+    color: white;
+}
+.home .wrapper {
+    display: grid;
+    align-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    justify-items: center;
+    min-height: 100vh;
+    gap: 15px;
+}
+.logo img {
+    width: 300px;
+    margin: -100px auto;
+}
+.home .over-img {
+    max-width: 600px;
+}
+.main-title {
+    font-size: 24px;
+}
+.sub-main-title {
+    font-size: 14px;
+}
+.short-desc-over {
+    font-size: 12px;
+}
+.intro-svg {
+    background-color: var(--main-color);
+}
+.intro-svg path {
+    fill: white;
+}
+/* End home Section  */
+/* Whatssapp */
+.whatsapp-icon-floting {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:18px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    -webkit-box-shadow: 2px 2px 3px #999;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-float {
+    width: 33px;
+}
+.my-float path {
+    fill: white
+}
+
+/* Start hostiong-box Section  */
+.hosting-box .wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: "box box box box box box box box over over over over" ;
+    gap: 20px;
+    align-items: flex-start;
+}
+@media (max-width: 768px) {
+    .hosting-box .wrapper  {
+        grid-template-areas: "box box box box box box box box box box box box" ;
+    }
+}
+
+.hosting-box .boxes {
+    grid-area: box;
+}
+.boxes-over {
+    background: #117238;
+    color: white;
+    grid-area: over;
+    padding: 10px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 786px) {
+    .boxes-over {
+        display: none;
+    }
+}
+.hosting-box .box {
+    position: relative;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+    margin-bottom: 16px;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+.hosting-box .box::before {
+    counter-increment: mohamad-box;
+    content: counter(mohamad-box);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(80%, -50%);
+    border: 2px solid blue;
+    color: blue;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+@media (min-width: 992px) {
+    .hosting-box .box {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+    }
+}
+.hosting-box .img {
+    width: 150px;
+}
+.hosting-box .hosting-feature {
+    font-size: 14px;
+    padding: 10px 20px;
+
+}
+.hosting-box .hosting-feature li {
+    display: flex;
+    gap: 5px;
+    justify-content: start;
+    align-items: center;
+    color: #777;
+    font-size: 12px;
+}
+@media (min-width: 768px) {
+    .hosting-box .hosting-feature li {
+        font-size: 15px;
+    }
+}
+.hosting-box .check-icon {
+    width: 15px;
+}
+.hosting-box .check-icon path {
+    fill:  #0aff1d;
+}
+.hosting-box .title-hosting {
+    font-size: 16px;
+    line-height: 1.6;
+}
+.hosting-box  .box-btn  a {
+    background:  blue;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 2px;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+}
+
+/* End hostiong-box Section  */
+
+/* Start Main-over */
+.main-over {
+    background: #eee;
+    padding: 30px 0px;
+}
+.main-over .box {
+    border: 2px dashed #999;
+    padding: 15px;
+    max-width: var(--box-over-size);
+    margin: 40px auto 20px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+}
+.main-over .box ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.main-over .box ul li svg {
+    width: 20px;
+}
+.main-over .box ul li svg path {
+    fill: #25D366;
+}
+.main-over .box ul li p {
+    flex: 1;
+}
+.main-over .price {
+    text-decoration: line-through;
+}
+/* End Main-over */
+/* Start for whom  */
+.for-whom {
+    background: var(--main-color);
+    color: white;
+    padding: 30px 0px;
+    text-align: center;
+}
+/* End for whom  */
+
+
+/* Start not-done-offer  */
+.not-done-offer {
+    padding: 30px 0px;
+}
+.not-done-offer .box {
+    border: 2px solid red;
+    padding: 20px;
+    max-width: var(--box-over-size);
+    margin: auto;
+    text-align: center;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+}
+.not-done-offer .sub-title {
+    background: #F8E71C;
+    margin-bottom: 15px;
+}
+.not-done-offer .look-down {
+    margin: 65px auto;
+    text-align: center;
+}
+.not-done-offer .all-overs {
+    max-width: var(--box-over-size);
+    text-align: center;
+    border: 2px solid #C25656;
+    margin: auto;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+}
+.not-done-offer .old-price {
+    text-decoration: line-through;
+    font-size: 30px;
+}
+.not-done-offer .free {
+    font-size: 62px;
+    font-weight: bold;
+    color: #25D366;
+}
+.not-done-offer .all-overs .img {
+    background: #C25656;
+    padding: 20px;
+}
+.not-done-offer .total-price {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 15px auto;
+}
+.not-done-offer .notes p {
+    text-align: justify;
+    max-width: var(--box-over-size);
+    padding: 20px 0px;
+    color: #C25656;
+    font-size: 19px;
+    margin: auto;
+}
+/* Start footer  */
+footer {
+    background: var(--main-color);
+    overflow: hidden;
+    color: white;
+    padding: 20px 0px;
+    text-align: center;
+}
+/* End footer  */
